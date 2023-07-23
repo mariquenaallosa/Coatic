@@ -41,7 +41,7 @@ public class Area {
     }
 
     public Coatic getCoatic() {
-        return coatic;
+        return this.coatic;
     }
 
     public void setCoatic(Coatic coatic) {
@@ -49,7 +49,7 @@ public class Area {
     }
 
     public Set<Curso> getCursos() {
-        return cursos;
+        return this.cursos;
     }
 
     public void setCursos(Set<Curso> cursos) {

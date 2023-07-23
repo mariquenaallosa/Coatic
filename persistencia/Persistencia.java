@@ -4,6 +4,8 @@ package persistencia;
 import javax.persistence.*;
 
 
+// PErsistencia JPA con mariaDB
+
 public class Persistencia {
     
     private final EntityManagerFactory emf;

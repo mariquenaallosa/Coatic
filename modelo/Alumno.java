@@ -19,7 +19,7 @@ public class Alumno {
     private Date fechaNacimiento;
     
     // muchos alumnos se relacionan con muchos cursos
-    @ManyToMany(mappedBy = "alummnos", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "alumnos", fetch = FetchType.EAGER)
     private Set<Curso> cursos;
     
     // muchas áreas se relacionan con el mismo Coatic
@@ -50,7 +50,7 @@ public class Alumno {
     }
     
     public String getDni() {
-        return dni;
+        return this.dni;
     }
 
     public void setDni(String dni) {
@@ -59,7 +59,7 @@ public class Alumno {
 
        
     public Date getFechaNacimiento() {
-        return fechaNacimiento;
+        return this.fechaNacimiento;
     }
 
     public void setFechaNacimiento(Date fechaNacimiento) {
@@ -67,7 +67,7 @@ public class Alumno {
     }
     
     public Set<Curso> getCursos() {
-        return cursos;
+        return this.cursos;
     }
 
     public void setCursos(Set<Curso> cursos) {
@@ -75,7 +75,7 @@ public class Alumno {
     }
 
     public Coatic getCoatic() {
-        return coatic;
+        return this.coatic;
     }
 
     public void setCoatic(Coatic coatic) {

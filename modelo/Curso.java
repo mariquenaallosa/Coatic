@@ -90,7 +90,7 @@ public class Curso {
     }
 
     public boolean isPresencial() {
-        return presencial;
+        return this.presencial;
     }
 
     public Set<Alumno> getAlumnos() {
