@@ -56,7 +56,10 @@ public class Area {
         this.cursos = cursos;
     }
     
-    
+    @Override    
+    public String toString(){
+        return this.nombre;
+    }
     
     
 }

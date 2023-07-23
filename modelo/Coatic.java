@@ -4,60 +4,49 @@ import java.util.*;
 import javax.persistence.*;
 import persistencia.Persistencia;
 
-
 @Entity
 public class Coatic {
-    
+
     @Id
     private Long id;
-    
-    
+
     private String nombre;
-    
-    
+
     private static Persistencia persistencia;
-    
-    
+
     //Coatic conoce a todas las áreas
-    @OneToMany(mappedBy="coatic")
+    @OneToMany(mappedBy = "coatic")
     private Set<Alumno> alummnos;
-    
+
     //Coatic conoce a todas las áreas
-    @OneToMany(mappedBy="coatic")
+    @OneToMany(mappedBy = "coatic")
     private Set<Area> areas;
-    
-    
+
     //Coatic conoce a todos los cursos
-    @OneToMany(mappedBy="coatic")
+    @OneToMany(mappedBy = "coatic")
     private Set<Curso> cursos;
-    
-    
-    
-    
-    
+
     // constructor nulo (necesario)
-    public Coatic(){
+    public Coatic() {
     }
-    
+
     // constructor con parámetros
-    public Coatic(Long id, String nombre){
+    public Coatic(Long id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        
-        
-       /*
+
+        /*
         * Cuando se contruye el Coatic
         * se guarda en la BD a si mismo
-        */
+         */
         Coatic.persistencia.insertar(this);
     }
-    
-    
-    public Long getId(){
+
+    public Long getId() {
         return id;
     }
-    
-    public void setId(Long id){
+
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -100,16 +89,27 @@ public class Coatic {
     public void setCursos(Set<Curso> cursos) {
         this.cursos = cursos;
     }
-    
-    
 
     
+    //Coatic gestiona las areas
     
-    
-    
-    
-    
-    
-    
-    
+    public void crearArea(String nombre) {
+        Area area = new Area(nombre, this);
+        this.areas.add(area);
+        Coatic.getPersistencia().insertar(area);
+    }
+
+    public void modificarArea(Area area, String nombre) {
+        if (area != null) {
+            area.setNombre(nombre);
+            Coatic.getPersistencia().modificar(area);
+        }
+    }
+
+    public void eliminarArea(Area area) {
+        if (area != null) {
+            Coatic.getPersistencia().eliminar(area);
+        }
+    }
+
 }

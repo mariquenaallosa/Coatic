@@ -1,7 +1,8 @@
 package sistema;
 
-import modelo.Area;
+
 import modelo.Coatic;
+import vistas.Principal;
 
 
 public class Inicio {
@@ -15,11 +16,11 @@ public class Inicio {
             c = new Coatic(1L, "Red CoaTIC");
         }
         
-        Area a1 = new Area("Programación", c);
-        Area a2 = new Area("Marketing", c);
+        Principal ventana = new Principal(c);
+        ventana.setVisible(true);
         
-        Coatic.getPersistencia().insertar(a1);
-        Coatic.getPersistencia().insertar(a2);
+        
+        
     }
     
 }
