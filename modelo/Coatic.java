@@ -51,6 +51,15 @@ public class Coatic {
         */
         Coatic.persistencia.insertar(this);
     }
+    
+    
+    public Long getId(){
+        return id;
+    }
+    
+    public void setId(Long id){
+        this.id = id;
+    }
 
     public String getNombre() {
         return this.nombre;
@@ -67,7 +76,7 @@ public class Coatic {
     static {
         persistencia = new Persistencia();
     }
-    
+
     public Set<Alumno> getAlummnos() {
         return alummnos;
     }
@@ -75,22 +84,24 @@ public class Coatic {
     public void setAlummnos(Set<Alumno> alummnos) {
         this.alummnos = alummnos;
     }
-    
+
     public Set<Area> getAreas() {
-        return this.areas;
+        return areas;
     }
 
     public void setAreas(Set<Area> areas) {
         this.areas = areas;
     }
-    
-     public Set<Curso> getCursos() {
-        return this.cursos;
+
+    public Set<Curso> getCursos() {
+        return cursos;
     }
 
     public void setCursos(Set<Curso> cursos) {
         this.cursos = cursos;
     }
+    
+    
 
     
     

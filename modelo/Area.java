@@ -39,6 +39,24 @@ public class Area {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Coatic getCoatic() {
+        return coatic;
+    }
+
+    public void setCoatic(Coatic coatic) {
+        this.coatic = coatic;
+    }
+
+    public Set<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(Set<Curso> cursos) {
+        this.cursos = cursos;
+    }
+    
+    
     
     
 }

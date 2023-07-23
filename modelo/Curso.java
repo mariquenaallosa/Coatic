@@ -34,7 +34,7 @@ public class Curso {
     @ManyToOne(cascade=CascadeType.REFRESH)
     private Area area;
     
-    // muchas áreas se relacionan con el mismo Coatic
+    // muchos cursos se relacionan con el mismo Coatic
     @ManyToOne(cascade=CascadeType.REFRESH)
     private Coatic coatic;
     
