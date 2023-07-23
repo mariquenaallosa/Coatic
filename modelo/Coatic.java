@@ -90,9 +90,7 @@ public class Coatic {
         this.cursos = cursos;
     }
 
-    
     //Coatic gestiona las areas
-    
     public void crearArea(String nombre) {
         Area area = new Area(nombre, this);
         this.areas.add(area);

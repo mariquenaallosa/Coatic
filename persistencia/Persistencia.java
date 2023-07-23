@@ -1,53 +1,44 @@
 package persistencia;
 
-
 import javax.persistence.*;
 
-
 // PErsistencia JPA con mariaDB
-
 public class Persistencia {
-    
+
     private final EntityManagerFactory emf;
     private final EntityManager em;
-    
-    public Persistencia(){
+
+    public Persistencia() {
         this.emf = Persistence.createEntityManagerFactory("CoaticPU");
         this.em = emf.createEntityManager();
     }
-    
-    
+
     // funciones necesarias para transacciones referidas a la base de datos
-    
-    public void insertar(Object o){
+    public void insertar(Object o) {
         this.em.getTransaction().begin();
         this.em.persist(o);
-        this.em.getTransaction().commit();  
+        this.em.getTransaction().commit();
     }
-    
-    
-    public void modificar(Object o){
+
+    public void modificar(Object o) {
         this.em.getTransaction().begin();
         this.em.merge(o);
         this.em.getTransaction().commit();
     }
-    
-    
-     public void eliminar(Object o){
+
+    public void eliminar(Object o) {
         this.em.getTransaction().begin();
         this.em.remove(o);
         this.em.getTransaction().commit();
     }
-    
-     
-     public Object buscar(Class clase, Object id){
-         Object o = em.find(clase, id);
-         return o;
-     }
-     
-     
-     public void refrescar(Object o){
-         this.em.refresh(o);
-     }
-    
+
+    public Object buscar(Class clase, Object id) {
+        Object o = em.find(clase, id);
+        return o;
+    }
+
+    public void refrescar(Object o) {
+        this.em.refresh(o);
+    }
+
 }
