@@ -5,13 +5,14 @@ import modelo.*;
 public class Principal extends javax.swing.JFrame {
     
     private FormularioAreas areaForm = null;
-    
+
     private Coatic coatic;
     
     public Principal(Coatic c) {
         this.coatic = c;
         initComponents();
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -64,12 +65,12 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formAreas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formAreas
-        if (areaForm == null || areaForm.isClosed()) {
+        if(areaForm == null || areaForm.isClosed()){
             areaForm = new FormularioAreas(coatic);
-            this.dpPanel.add(areaForm);            
+            this.dpPanel.add(areaForm); 
         }
         areaForm.setVisible(true);
-        
+              
     }//GEN-LAST:event_formAreas
 
 

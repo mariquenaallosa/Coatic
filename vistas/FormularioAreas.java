@@ -90,16 +90,16 @@ public class FormularioAreas extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(112, 112, 112)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,12 +127,12 @@ public class FormularioAreas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_guardarArea
 
     private void eliminarArea(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarArea
-        if (!this.lstAreas.isSelectionEmpty()) {
+        if(!this.lstAreas.isSelectionEmpty()){
             Area a = (Area) this.lstAreas.getSelectedValue();
             this.coatic.eliminarArea(a);
             limpiar();
         }
-
+        
     }//GEN-LAST:event_eliminarArea
 
     private void areaSelecionada(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_areaSelecionada
@@ -140,7 +140,7 @@ public class FormularioAreas extends javax.swing.JInternalFrame {
             Area a = (Area) this.lstAreas.getSelectedValue();
             // asigno los valores de los atributos a los componentes
             this.txtNombre.setText(a.getNombre());
-
+            
         }
     }//GEN-LAST:event_areaSelecionada
 
